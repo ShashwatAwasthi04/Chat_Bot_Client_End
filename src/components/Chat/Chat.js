@@ -19,10 +19,14 @@ useEffect(() => {
     setRoom(room);
 
     socket.emit('join', { name, room }, (error) => {
-        if(error) {
-          alert(error);
-        }
+        
       });
+
+      return () => {
+          socket.emit('disconnect');
+          
+          socket.off();
+      }
 },[END, location.search]);
 
     return(
