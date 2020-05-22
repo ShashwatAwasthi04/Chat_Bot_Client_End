@@ -4,7 +4,7 @@ import Icon1 from '../../Icons/Icon1.png';
 import Icon2 from '../../Icons/Icon2.png';
 import './Infobar.css';
 
-const InfoBar = ({room}) => (
+const InfoBar = ({ room }) => (
     <div className="infoBar">
     <div className="leftInnerContainer">
       <img className="onlineIcon" src={Icon2} alt="online icon" />
