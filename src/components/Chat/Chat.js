@@ -7,7 +7,7 @@ import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 
 let socket;
-const END = 'localhost:5000';
+const val = 'localhost:5000';
 
 const Chat = ({location}) => {
     const [name, setName] = useState('');
@@ -20,7 +20,7 @@ useEffect(() => {
     const {name,room}= queryString.parse(location.search);
     
 
-    socket=io(END);
+    socket=io(val);
 
     setName(name);
     setRoom(room);
@@ -35,7 +35,7 @@ useEffect(() => {
           
           socket.off();
       }
-    },[END, location.search]);
+    },[val, location.search]);
 
     useEffect(() => {
     socket.on('message' ,(message) => {
